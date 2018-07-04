@@ -12,22 +12,6 @@ export default class ImageResize {
     window.addEventListener('resize', this.resizeEvent)
     setTimeout(this.imgMap, 500)
   }
-  imgMap = () => {
-    const {imageW, imageH} = this
-    const wPercent = this.imageMap.offsetWidth / 100
-    const hPercent = this.imageMap.offsetHeight / 100
-
-    this.areaArray.forEach( elem => {
-      const coords = this.getCoords(elem).split(",")
-      const coordsPercent = coords.map( (coord, index) => {
-        return (index % 2) === 0
-          ? parseInt(((coords[index] / imageW) * 100) * wPercent, 10)
-          : parseInt(((coords[index] / imageH) * 100) * hPercent, 10)
-      }).join()
-
-      elem.setAttribute('coords', coordsPercent)
-    })
-  }
   getCoords = (elem) => {
     let areaCords = elem.dataset.coords
 
@@ -38,6 +22,23 @@ export default class ImageResize {
     }
 
     return areaCords
+  }
+  imgMap = () => {
+    this.wPercent = this.imageMap.offsetWidth / 100
+    this.hPercent = this.imageMap.offsetHeight / 100
+
+    this.areaArray.forEach(this.areaLoop)
+  }
+  areaLoop = (area) => {
+    const coords = this.getCoords(area).split(",")
+    const coordsPercent = coords.map(this.mapCoords).join()
+
+    area.setAttribute('coords', coordsPercent)
+  }
+  mapCoords = (coord, index) => {
+    return (index % 2) === 0
+      ? parseInt(((coord / this.imageW) * 100) * this.wPercent, 10)
+      : parseInt(((coord / this.imageH) * 100) * this.hPercent, 10)
   }
   resizeEvent = (e) => {
     this.imgMap()

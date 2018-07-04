@@ -8,8 +8,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        query: {
-          presets: ["stage-0"]
+        options: {
+          babelrc: './babelrc'
         }
       }
     ]
