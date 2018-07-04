@@ -8,8 +8,8 @@ export default class ImageResize {
     const mapId = this.imageMap.getAttribute('usemap')
     const area = document.querySelector(`map[name="${mapId.substring(1, mapId.length)}"]`).children
     this.areaArray = Array.from(area)
-    window.addEventListener('resize', this.resizeEvent)
 
+    window.addEventListener('resize', this.resizeEvent)
     setTimeout(this.imgMap, 500)
   }
   imgMap = () => {
