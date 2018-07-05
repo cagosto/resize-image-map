@@ -2,7 +2,7 @@
 
 ## Whats This?
 
-This ES6 class will let you have an responsive image map as seen in this [https://codepen.io/Cagosto/pen/PGrzvX](demo).
+This ES6 class will let you have an responsive image map as seen in this [demo](https://codepen.io/Cagosto/pen/PGrzvX).
 
 ## Config
 Pass the natural image with and height and the element ID as shown below:
