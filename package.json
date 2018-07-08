@@ -4,7 +4,8 @@
   "description": "responsive image map",
   "main": "build/resize-image.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js --mode development",
+    "start": "npm run localBuild | npm run server",
+    "localBuild": "webpack --config webpack.config.js --mode development",
     "server": "webpack-dev-server --mode development"
   },
   "repository": {
