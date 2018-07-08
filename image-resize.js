@@ -1,8 +1,8 @@
 /**
  * Example config
  * {
-    width: 1024, Natural with
-    height: 768, Natural with
+    width: 1024, Natural width
+    height: 768, Natural height
     element : '#power-puff__map' Selector
    }
  */
@@ -18,7 +18,8 @@ export default class ImageResize {
     this.imageH = height
     this.imageMap = document.querySelector(element)
     const mapId = this.imageMap.getAttribute('usemap')
-    const area = document.querySelector(`map[name="${mapId.substring(1, mapId.length)}"]`).children
+    const mapElem = `map[name="${mapId.substring(1, mapId.length)}"]`
+    const area = document.querySelector(mapElem).children
     this.areaArray = Array.from(area)
 
     window.addEventListener('resize', this.resizeEvent)
@@ -60,7 +61,7 @@ export default class ImageResize {
    * mapCoords - Set new image map coordinates based on new image width and height
    * @param  {Num} coord - coordinates from image map array
    * @param  {Num} index - Loop index
-   * @return {Num} - New imae map coordinates
+   * @return {Num} - New image map coordinates
    */
   mapCoords = (coord, index) => {
     return (index % 2) === 0
