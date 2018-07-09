@@ -1,12 +1,13 @@
 {
   "name": "resize-image-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "responsive image map",
   "main": "build/resize-image.js",
   "scripts": {
     "start": "npm run localBuild | npm run server",
     "localBuild": "webpack --config webpack.config.js --mode development",
-    "server": "webpack-dev-server --mode development"
+    "server": "webpack-dev-server --mode development",
+    "build": "webpack --config webpack.prod.js --mode production"
   },
   "repository": {
     "type": "git",

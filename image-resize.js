@@ -64,11 +64,11 @@ export default class ImageResize {
    * @return {Num} - New image map coordinates
    */
   mapCoords = (coord, index) => {
-    const paseCoord = parseInt(coord, 10)
+    const parseCoord = parseInt(coord, 10)
 
     return (index % 2) === 0
-      ? this.coordMath(paseCoord, this.imageW, this.wPercent)
-      : this.coordMath(paseCoord, this.imageH,  this.hPercent)
+      ? this.coordMath(parseCoord, this.imageW, this.wPercent)
+      : this.coordMath(parseCoord, this.imageH,  this.hPercent)
   }
   /**
    * coordMath Set new coordinates from orginal image map coordinates
@@ -77,7 +77,7 @@ export default class ImageResize {
    * @param  {Num} percentVal - New image width or height divided by 100
    * @return {Num} - New iamge map coordinates
    */
-  coordMath = (coord, imgVal, percentVal) => (((coord / imgVal) * 100) * percentVal)
+  coordMath = (coord, imgVal, percentVal) => coord / imgVal * 100 * percentVal
   /**
    * resizeEvent - Resize Event
    * @param  {Obj} e - Event object

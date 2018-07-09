@@ -1,4 +1,4 @@
-import ImageResize from './image-resize'
+import ImageResize from './build/resize-image'
 
 new ImageResize({
   width: 1024,
