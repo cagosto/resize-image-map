@@ -5,8 +5,8 @@
   "main": "build/resize-image.js",
   "scripts": {
     "start": "npm run localBuild | npm run server",
-    "localBuild": "webpack --config webpack.config.js --mode development",
-    "server": "webpack-dev-server --mode development --hot --inline"
+    "localBuild": "webpack --config ./webpack.config.js --mode development",
+    "server": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
