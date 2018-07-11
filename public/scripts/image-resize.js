@@ -1,5 +1,5 @@
 /**
- * Example config
+ * Example config:
  * {
     width: 1024, Natural width
     height: 768, Natural height
@@ -13,7 +13,7 @@ export default class ImageResize {
    */
   constructor(config) {
     const {width, height, element} = config
-
+    
     this.imageW = width
     this.imageH = height
     this.imageMap = document.querySelector(element)
@@ -59,7 +59,7 @@ export default class ImageResize {
   }
   /**
    * mapCoords - Set new image map coordinates based on new image width and height
-   * @param  {Num} coord - coordinates from image map array
+   * @param  {String} coord - coordinates from image map array
    * @param  {Num} index - Loop index
    * @return {Num} - New image map coordinates
    */

@@ -1,5 +1,8 @@
+var path = require('path');
+var dir = './public'
+
 module.exports = {
-  entry: './index.js',
+  entry: dir + '/scripts/index.js',
   output: {
     filename: './bundle.js'
   },
@@ -13,6 +16,9 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
+    publicPath: '/dist/'
   },
   stats: {
     colors: true
