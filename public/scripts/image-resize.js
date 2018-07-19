@@ -23,14 +23,23 @@ export default class ImageResize {
     this.areaArray = Array.from(area)
 
     window.addEventListener('resize', this.resizeEvent)
+    setTimeout(this.imgMap, 500)
+  }
+  /**
+   * getCoords - get image map coordinates
+   * @param  {Node} elem - area tag
+   * @return {String} - area map coordinates
+   */
+  getCoords = (elem) => {
+    let areaCords = elem.dataset.coords
 
-    setTimeout(() => {
-      this.areaArray.forEach( area => {
-        area.dataset.coords = area.getAttribute('coords')
-      })
+    if(!areaCords){
+      areaCords = elem.getAttribute('coords')
 
-      this.imgMap()
-    }, 500)
+      elem.dataset.coords = areaCords
+    }
+
+    return areaCords
   }
   imgMap = () => {
     this.wPercent = this.imageMap.offsetWidth / 100
@@ -43,7 +52,7 @@ export default class ImageResize {
    * @param  {Node} area - Area tag
    */
   areaLoop = (area) => {
-    const coords = area.dataset.coords.split(",")
+    const coords = this.getCoords(area).split(",")
     const coordsPercent = coords.map(this.mapCoords).join()
 
     area.setAttribute('coords', coordsPercent)
