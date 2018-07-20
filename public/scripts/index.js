@@ -1,4 +1,5 @@
 import ImageResize from './image-resize'
+import '../scss/main.scss'
 
 new ImageResize({
   width: 1024,
