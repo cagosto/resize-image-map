@@ -72,10 +72,10 @@ export default class ImageResize {
   };
   /**
    * coordinatesMath Set new coordinates from original image map coordinates
-   * @param  {Num} coordinate - original image map coordinate
-   * @param  {Num} imgVal - Image width or height value
-   * @param  {Num} percentVal - New image width or height divided by 100
-   * @return {Num} - New image map coordinates
+   * @param  {number} coordinates - original image map coordinate
+   * @param  {number} imgVal - Image width or height value
+   * @param  {number} percentVal - New image width or height divided by 100
+   * @return {number} - New image map coordinates
    */
   coordinatesMath = (coordinates, imgVal, percentVal) =>
     (coordinates / imgVal) * 100 * percentVal;
